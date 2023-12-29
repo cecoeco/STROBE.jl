@@ -1,6 +1,8 @@
 #https://www.strobe-statement.org
 
 using DataFrames
+using CSV
+using XLSX
 
 cohort_studies_df = DataFrame(
     "" => [

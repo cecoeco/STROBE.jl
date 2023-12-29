@@ -11,8 +11,8 @@ using XLSX
 using Colors
 
 include("../../STROBE.jl/src/STROBE.jl")
-include("layout/navbar.jl")
-include("layout/footer.jl")
+include("navbar.jl")
+include("footer.jl")
 include("pages/combined.jl")
 include("pages/cohort_studies.jl")
 include("pages/case-control_studies.jl")
@@ -36,7 +36,7 @@ app = dash(
     meta_tags=[
         Dict("charset" => "utf-8"),
         Dict("name" => "viewport", "content" => "width=device-width, initial-scale=1.0"),
-        Dict("name" => "description", "content" => "STORMS.jl: Strengthening The Organization and Reporting of Microbiome Studies"),
+        Dict("name" => "description", "content" => "STROBE.jl: Strengthening The Organization and Reporting of Microbiome Studies"),
         Dict("name" => "keywords", "content" => ""),
         Dict("name" => "author", "content" => "Ceco Elijah Maples")
     ]
@@ -49,16 +49,18 @@ content = html_div(id="page-content")
 app.layout = html_div([dcc_location(id="url"), navbar, content, footer])
 
 callback!(app, Output("page-content", "children"), Input("url", "pathname")) do pathname
-    if pathname == "/"
-        return 
-    elseif pathname == "/"
-        return 
-    elseif pathname == "/"
-        return 
-    elseif pathname == "/"
-        return 
-    elseif pathname == "/"
-        return 
+    if pathname == "/home"
+        return home_page
+    elseif pathname == "/combined"
+        return combined
+    elseif pathname == "/cohort studies"
+        return cohort_studies
+    elseif pathname == "/case-control studies"
+        return case_control_studies
+    elseif pathname == "/cross-sectional studies"
+        return cross_sectional_studies
+    elseif pathname == "/conference abstracts"
+        return conference_abstracts
     else
         return not_found_404
     end
