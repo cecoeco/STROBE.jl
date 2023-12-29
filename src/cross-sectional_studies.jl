@@ -2,7 +2,7 @@
 
 using DataFrames
 
-cross_sectional_studies = DataFrame(
+cross_sectional_studies_df = DataFrame(
     "" => [
         "Title and abstract",
         missing,
@@ -121,3 +121,28 @@ cross_sectional_studies = DataFrame(
         "Give the source of funding and the role of the funders for the present study and, if applicable, for the original study on which the present article is based"
     ]
 )
+
+function cross_sectional_studies(
+    save_location::String = pwd(),
+    filename::String = "cross_sectional_studies",
+    filetype::String = "csv",
+    sheetname::String = "cross_sectional_studies",
+)
+    if filetype == "csv"
+        CSV.write("$save_location/$filename.csv", cross_sectional_studies_df)
+        println("$filename.csv to $save_location")
+    elseif filetype == "xlsx"
+        XLSX.writetable(xlsx_filename, DataFrame(cross_sectional_studies_df), sheetname = sheetname)
+        println("$filename.xlsx to $save_location")
+    else
+        println("Unsupported file type: $filetype")
+    end
+end
+
+function cross_sectional_studies_csv(save_location::String = pwd(), filename::String = "cross_sectional_studies")
+    CSV.write("$save_location/$filename.csv", cross_sectional_studies_df)
+end
+
+function cross_sectional_studies_xlsx(save_location::String = pwd(), filename::String = "cross_sectional_studies")
+    XLSX.writetable("$save_location/$filename.xlsx", cross_sectional_studies_df)
+end

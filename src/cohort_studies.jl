@@ -127,3 +127,28 @@ cohort_studies_df = DataFrame(
         "Give the source of funding and the role of the funders for the present study and, if applicable, for the original study on which the present article is based"
     ]
 )
+
+function cohort_studies(
+    save_location::String = pwd(),
+    filename::String = "cohort_studies",
+    filetype::String = "csv",
+    sheetname::String = "cohort_studies",
+)
+    if filetype == "csv"
+        CSV.write("$save_location/$filename.csv", cohort_studies_df)
+        println("$filename.csv to $save_location")
+    elseif filetype == "xlsx"
+        XLSX.writetable(xlsx_filename, DataFrame(cohort_studies_df), sheetname = sheetname)
+        println("$filename.xlsx to $save_location")
+    else
+        println("Unsupported file type: $filetype")
+    end
+end
+
+function cohort_studies_csv(save_location::String = pwd(), filename::String = "cohort_studies")
+    CSV.write("$save_location/$filename.csv", cohort_studies_df)
+end
+
+function cohort_studies_xlsx(save_location::String = pwd(), filename::String = "cohort_studies")
+    XLSX.writetable("$save_location/$filename.xlsx", cohort_studies_df)
+end

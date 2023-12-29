@@ -36,3 +36,28 @@ conference_abstracts_df = DataFrame(
         "General interpretation of study results"
     ]
 )
+
+function conference_abstracts(
+    save_location::String = pwd(),
+    filename::String = "conference_abstracts",
+    filetype::String = "csv",
+    sheetname::String = "conference_abstracts",
+)
+    if filetype == "csv"
+        CSV.write("$save_location/$filename.csv", conference_abstracts_df)
+        println("$filename.csv to $save_location")
+    elseif filetype == "xlsx"
+        XLSX.writetable(xlsx_filename, DataFrame(conference_abstracts_df), sheetname = sheetname)
+        println("$filename.xlsx to $save_location")
+    else
+        println("Unsupported file type: $filetype")
+    end
+end
+
+function conference_abstracts_csv(save_location::String = pwd(), filename::String = "conference_abstracts")
+    CSV.write("$save_location/$filename.csv", conference_abstracts_df)
+end
+
+function conference_abstracts_xlsx(save_location::String = pwd(), filename::String = "conference_abstracts")
+    XLSX.writetable("$save_location/$filename.xlsx", conference_abstracts_df)
+end

@@ -219,3 +219,28 @@ combined_df = DataFrame(
         missing
     ]
 )
+
+function combined(
+    save_location::String = pwd(),
+    filename::String = "combined",
+    filetype::String = "csv",
+    sheetname::String = "combined",
+)
+    if filetype == "csv"
+        CSV.write("$save_location/$filename.csv", combined_df)
+        println("$filename.csv to $save_location")
+    elseif filetype == "xlsx"
+        XLSX.writetable(xlsx_filename, DataFrame(combined_df), sheetname = sheetname)
+        println("$filename.xlsx to $save_location")
+    else
+        println("Unsupported file type: $filetype")
+    end
+end
+
+function combined_csv(save_location::String = pwd(), filename::String = "combined")
+    CSV.write("$save_location/$filename.csv", combined_df)
+end
+
+function combined_xlsx(save_location::String = pwd(), filename::String = "combined")
+    XLSX.writetable("$save_location/$filename.xlsx", combined_df)
+end

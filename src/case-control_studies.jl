@@ -1,6 +1,8 @@
 #https://www.strobe-statement.org
 
 using DataFrames
+using CSV
+using XLSX
 
 case_control_studies_df = DataFrame(
     "" => [
@@ -31,13 +33,13 @@ case_control_studies_df = DataFrame(
         "Descriptive data",
         missing,
         "Outcome data",
-        missing,
         "Main results",
         missing,
         missing,
         "Other analyzes",
         "Discussion",
         "Key results",
+        "Limitations",
         "Interpretation",
         "Generalizability",
         "Other information",
@@ -124,3 +126,28 @@ case_control_studies_df = DataFrame(
         "Give the source of funding and the role of the funders for the present study and, if applicable, for the original study on which the present article is based"
     ]
 )
+
+function case_control(
+    save_location::String = pwd(),
+    filename::String = "case_control",
+    filetype::String = "csv",
+    sheetname::String = "case_control",
+)
+    if filetype == "csv"
+        CSV.write("$save_location/$filename.csv", case_control_studies_df)
+        println("$filename.csv to $save_location")
+    elseif filetype == "xlsx"
+        XLSX.writetable(xlsx_filename, DataFrame(case_control_studies_df), sheetname = sheetname)
+        println("$filename.xlsx to $save_location")
+    else
+        println("Unsupported file type: $filetype")
+    end
+end
+
+function case_control_csv(save_location::String = pwd(), filename::String = "case_control")
+    CSV.write("$save_location/$filename.csv", case_control_studies_df)
+end
+
+function case_control_xlsx(save_location::String = pwd(), filename::String = "case_control")
+    XLSX.writetable("$save_location/$filename.xlsx", case_control_studies_df)
+end
