@@ -1,7 +1,5 @@
 #https://www.strobe-statement.org
 
-using CSV
-using XLSX
 using DataFrames
 
 case_control_studies_df = DataFrame(

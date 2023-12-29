@@ -11,14 +11,14 @@ using XLSX
 using Colors
 
 include("../../STROBE.jl/src/STROBE.jl")
-include("navbar.jl")
-include("footer.jl")
-include("combined.jl")
-include("cohort_studies.jl")
-include("case-control_studies.jl")
-include("cross-sectional_studies.jl")
-include("conference_abstracts.jl")
-include("404.jl")
+include("layout/navbar.jl")
+include("layout/footer.jl")
+include("pages/combined.jl")
+include("pages/cohort_studies.jl")
+include("pages/case-control_studies.jl")
+include("pages/cross-sectional_studies.jl")
+include("pages/conference_abstracts.jl")
+include("pages/404.jl")
 
 assets_folder = "/STOBE.jl/dash/assets"
 
@@ -58,7 +58,7 @@ callback!(app, Output("page-content", "children"), Input("url", "pathname")) do 
     elseif pathname == "/"
         return 
     elseif pathname == "/"
-        return
+        return 
     else
         return not_found_404
     end

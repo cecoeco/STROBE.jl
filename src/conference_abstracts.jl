@@ -1,7 +1,5 @@
 #https://www.strobe-statement.org
 
-using CSV
-using XLSX
 using DataFrames
      
 conference_abstracts_df = DataFrame(
