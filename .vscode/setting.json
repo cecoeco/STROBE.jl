@@ -1,0 +1,13 @@
+{
+  "scss.format.enable": true,
+  "liveSassCompile.settings.autoprefix": [],
+  "liveSassCompile.settings.watchOnLaunch": false,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/app/assets/css",
+      "savePathReplacementPairs": null
+    }
+  ]
+}
