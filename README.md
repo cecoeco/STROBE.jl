@@ -1,5 +1,5 @@
 <div align="center">
-<b>STROBE.jl</b>
+<h1><b>STROBE.jl</b></h1>
 </div>
 
 

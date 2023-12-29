@@ -20,7 +20,7 @@ include("pages/cross-sectional_studies.jl")
 include("pages/conference_abstracts.jl")
 include("pages/404.jl")
 
-assets_folder = "/STOBE.jl/dash/assets"
+assets_folder = "dash/assets"
 
 external_stylesheets = [
     "https://use.fontawesome.com/releases/v6.5.1/css/all.css",
@@ -36,13 +36,13 @@ app = dash(
     meta_tags=[
         Dict("charset" => "utf-8"),
         Dict("name" => "viewport", "content" => "width=device-width, initial-scale=1.0"),
-        Dict("name" => "description", "content" => "STROBE.jl: Strengthening The Organization and Reporting of Microbiome Studies"),
-        Dict("name" => "keywords", "content" => ""),
+        Dict("name" => "description", "content" => "STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology"),
+        Dict("name" => "keywords", "content" => "Epidemiology, Observational Studies, Reporting, STROBE, Medicine, Public Health, Research, Biostatistics"),
         Dict("name" => "author", "content" => "Ceco Elijah Maples")
     ]
 )
 
-app.title = ""
+app.title = "STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology"
 
 content = html_div(id="page-content")
 
