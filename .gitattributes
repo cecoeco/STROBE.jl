@@ -1,2 +1,2 @@
 *.css linguist-language=SCSS
-*.json linguist-language=JS
+*.json linguist-language=JavaScript
