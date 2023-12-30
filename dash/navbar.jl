@@ -14,9 +14,22 @@ navbar = dbc_nav(
             className="nav-items",
             children=[
                 html_li(
+                    id = "STROBE.jl-nav",
+                    className = "nav-item",
+                    dbc_navlink(
+                        id="STROBE.jl-link",
+                        className="nav-link",
+                        "STROBE.jl", 
+                        href = "https://github.com/cecoeco/STROBE.jl",
+                        active = "exact"
+                    )
+                ),
+                html_li(
                     id="home-nav", 
                     className="nav-item", 
                     dbc_navlink(
+                        id="home-link",
+                        className="nav-link",
                         "Home", 
                         href="/home", 
                         active = "exact"
@@ -26,10 +39,17 @@ navbar = dbc_nav(
                     id="checklists-nav",
                     className="nav-item dropdown", 
                     children=[
-                        html_a(
+                        html_button(
                             id="dropdown-button",
                             className="dropdown-button",
-                            "Checklists"
+                            type="button",
+                            children=[
+                                "Checklists",
+                                html_i(
+                                    id="dropdown-icon",
+                                    className="fa-solid fa-caret-down"
+                                )
+                            ]
                         ),
                         html_ul(
                             id="dropdown-menu", 

@@ -12,22 +12,24 @@ function table(
     transparent_bg::Bool = false,
     textsize = nothing,
     textfont = nothing,
+    textalignment = [nothing, nothing],
     textcolor = nothing,
     fillcolor = nothing,
-    textalignment = [nothing, nothing],
     linecolor = nothing,
+
     headertextsize::Number = 17,
     headertextfont::AbstractString = "Helvetica",
-    headertextcolor = "black",
     headertextalignment::Vector{String} = ["left", "center"],
-    headerlinecolor = "black",
+    headertextcolor = "black",
     headerfillcolor = "lightgray",
+    headerlinecolor = "black",
+
     celltextsize::Number = 17,
     celltextfont::AbstractString = "Helvetica",
+    celltextalignment::Vector{String} = ["left", "center"],
     celltextcolor = "black",
     cellfillcolor = "white",
-    celltextalignment::Vector{String} = ["left", "center"],
-    celllinecolor = "black",
+    celllinecolor = "black"
 )
     PlotlyJS.plot(
         PlotlyJS.table(

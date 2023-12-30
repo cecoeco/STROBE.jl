@@ -10,21 +10,23 @@ using CSV
 using XLSX
 using Colors
 
-include("../../STROBE.jl/src/STROBE.jl")
 include("navbar.jl")
 include("footer.jl")
+include("pages/home.jl")
 include("pages/combined.jl")
 include("pages/cohort_studies.jl")
 include("pages/case-control_studies.jl")
 include("pages/cross-sectional_studies.jl")
 include("pages/conference_abstracts.jl")
 include("pages/404.jl")
+include("../src/STROBE.jl")
 
 assets_folder = "dash/assets"
 
 external_stylesheets = [
     "https://use.fontawesome.com/releases/v6.5.1/css/all.css",
     "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200",
+    "dash/assets/css/app.css",
 ]
 
 app = dash(
@@ -50,7 +52,7 @@ app.layout = html_div([dcc_location(id="url"), navbar, content, footer])
 
 callback!(app, Output("page-content", "children"), Input("url", "pathname")) do pathname
     if pathname == "/home"
-        return home_page
+        return home
     elseif pathname == "/combined"
         return combined
     elseif pathname == "/cohort studies"

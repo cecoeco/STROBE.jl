@@ -338,3 +338,38 @@ template {
 [hidden] {
   display: none;
 }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(241, 245, 255);
+}
+
+html,
+body {
+  font-family: "Roboto-Regular", Helvetica;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "RobotoSlab-Bold", Helvetica;
+}
+
+p {
+  font-family: "Roboto-Regular", Helvetica;
+}
+
+small,
+sup,
+sub {
+  font-family: "Roboto-Light", Helvetica;
+}
+
+a {
+  color: black;
+}
