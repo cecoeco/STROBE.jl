@@ -1,0 +1,57 @@
+.fab-container {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    z-index: 99999;
+}
+
+.fab {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+#fab-star {
+    font-size: 20px;
+    margin-left: 2.5px;
+    color: #c9d1d9;
+}
+
+#fab-link {
+    color: #c9d1d9;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+#fab-text {
+    color: #c9d1d9;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+
+    a {
+        color: #c9d1d9;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        cursor: pointer;
+    }
+
+    small {
+        color: #c9d1d9;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        cursor: pointer;
+    }
+}

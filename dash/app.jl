@@ -12,6 +12,7 @@ using Colors
 
 include("navbar.jl")
 include("footer.jl")
+include("fab.jl")
 include("pages/home.jl")
 include("pages/combined.jl")
 include("pages/cohort_studies.jl")
@@ -26,13 +27,13 @@ assets_folder::String = "dash/assets"
 external_stylesheets::Vector{String} = [
     "https://use.fontawesome.com/releases/v6.5.1/css/all.css",
     "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200",
-    "https://codepen.io/chriddyp/pen/bWLwgP.css",
     "/dash/assets/css/app.css"
 ]
 
 external_scripts::Vector{String} = [
     "https://www.googletagmanager.com/gtag/js?id=TAG_ID",
     "/dash/assets/js/gtag.js",
+    "/dash/assets/js/fab.js"
 ]
 
 app = dash(
@@ -55,7 +56,7 @@ app.title = "STROBE.jl: Strengthening the Reporting of Observational Studies in 
 
 content = html_div(id="page-content")
 
-app.layout = html_div([dcc_location(id="url"), navbar, content, footer])
+app.layout = html_div([dcc_location(id = "url"), navbar, fab, content, footer])
 
 callback!(app, Output("page-content", "children"), Input("url", "pathname")) do pathname
     if pathname == "/home"

@@ -17,12 +17,9 @@ footer = html_footer(
                     className = "footer-link",
                     href = "https://github.com/cecoeco/STROBE.jl",
                     children = [
-                        html_img(
-                            id = "footer-logo",
-                            className = "footer-logo",
-                            src = "dash/assets/github.png",
-                            alt = "Github's logo",
-                            title = "Github's logo"
+                        html_i(
+                            id = "Github-logo",
+                            className = "fa-brands fa-github"
                         ),
                         html_small(
                             id = "footer-text",
