@@ -21,19 +21,25 @@ include("pages/conference_abstracts.jl")
 include("pages/404.jl")
 include("../src/STROBE.jl")
 
-assets_folder = "dash/assets"
+assets_folder::String = "dash/assets"
 
-external_stylesheets = [
+external_stylesheets::Vector{String} = [
     "https://use.fontawesome.com/releases/v6.5.1/css/all.css",
     "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200",
     "https://codepen.io/chriddyp/pen/bWLwgP.css",
-    "dash/assets/css/app.css"
+    "/dash/assets/css/app.css"
+]
+
+external_scripts::Vector{String} = [
+    "https://www.googletagmanager.com/gtag/js?id=TAG_ID",
+    "/dash/assets/js/gtag.js",
 ]
 
 app = dash(
     url_base_pathname="/",
     assets_folder=assets_folder,
     external_stylesheets=external_stylesheets,
+    external_scripts=external_scripts,
     suppress_callback_exceptions=true,
     prevent_initial_callbacks=true,
     meta_tags=[
