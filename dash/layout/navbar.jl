@@ -46,36 +46,23 @@ navbar = dbc_nav(
                 html_li(
                     id="checklists-nav-list",
                     className="nav-item dropdown", 
-                    html_div(
-                        id = "checklists-nav",
-                        className = "nav-item",
-                        children=[
-                            dcc_checklist(
-                                id = "dropdown-input",
-                                className = "dropdown-input",
-                                options=[
-                                    Dict("label" => "", "value" => ""),
-                                ]
-                            ),
-                            html_button(
-                                id = "dropdown-button",
-                                className = "dropdown-button",
-                                type = "button",
-                                children = [
-                                    dbc_navlink(
-                                        id = "checklists-link",
-                                        className = "nav-link",
-                                        "Checklists"
-                                    ),
-                                    html_i(
-                                        id = "dropdown-icon",
-                                        className = "fa-solid fa-caret-down"
-                                    )
-                                ]
-                            )
-                        ]
-                    ),
                     children=[
+                        html_button(
+                            id = "dropdown-button",
+                            className = "dropdown-button",
+                            type = "button",
+                            children = [
+                                dbc_navlink(
+                                    id = "checklists-link",
+                                    className = "nav-link",
+                                    "Checklists"
+                                ),
+                                html_i(
+                                    id = "dropdown-icon",
+                                    className = "fa-solid fa-caret-down"
+                                )
+                            ]
+                        ),
                         html_ul(
                             id="dropdown-menu", 
                             className="dropdown-menu", 
@@ -98,7 +85,7 @@ navbar = dbc_nav(
                                         id="cohort-studies-link",
                                         className="nav-link",
                                         "Cohort studies", 
-                                        href="/cohort studies",   
+                                        href="/cohort_studies",   
                                         active = "exact"
                                     )
                                 ),
@@ -109,7 +96,7 @@ navbar = dbc_nav(
                                         id = "case-control-studies-link",
                                         className = "nav-link",
                                         "Case-control studies",
-                                        href = "/case-control studies",
+                                        href = "/case-control_studies",
                                         active = "exact"
                                     )
                                 ),
@@ -120,7 +107,7 @@ navbar = dbc_nav(
                                         id = "cross-sectional-studies-link",
                                         className = "nav-link",
                                         "Cross-sectional studies",
-                                        href = "/cross-sectional studies",
+                                        href = "/cross-sectional_studies",
                                         active = "exact"
                                     )
                                 ),
@@ -131,7 +118,7 @@ navbar = dbc_nav(
                                         id = "conference-abstracts-link",
                                         className = "nav-link",
                                         "Conference abstracts",
-                                        href = "/conference abstracts",
+                                        href = "/conference_abstracts",
                                         active = "exact"
                                     )
                                 )

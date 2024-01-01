@@ -24,7 +24,7 @@ footer = html_footer(
                         html_small(
                             id = "footer-text",
                             className = "footer-text",
-                            " STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology © 2023 Ceco Elijah Maples",
+                            " STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology © 2024 Ceco Elijah Maples",
                         )
                     ]
                 )

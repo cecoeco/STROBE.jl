@@ -26,7 +26,7 @@ home = html_div(
                     className = "home-link",
                 ),
                 html_p(
-                    className="home-text",
+                    className="home-text"
                 )
             ]
         )

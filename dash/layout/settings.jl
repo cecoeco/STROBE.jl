@@ -78,15 +78,23 @@ settings = html_div(
                             className = "dropdown",
                             placeholder = "Select a font",
                             options = [
-                                (label = "", value = ""),
-                                (label = "", value = ""),
-                                (label = "", value = ""),
-                                (label = "", value = ""),
-                                (label = "", value = ""),
-                                (label = "", value = ""),
-                                (label = "", value = ""),
-                                (label = "", value = "")
-                            ]
+                                (label = "Arial", value = "Arial"),
+                                (label = "Balto", value = "Balto"),
+                                (label = "Calibri", value = "Calibri"),
+                                (label = "Courier New", value = "Courier New"),
+                                (label = "Droid Sans", value = "Droid Sans"),
+                                (label = "Droid Serif", value = "Droid Serif"),
+                                (label = "Droid Sans Mono", value = "Droid Sans Mono"),
+                                (label = "Gravitas One", value = "Gravitas One"),
+                                (label = "Helvetica", value = "Helvetica"),
+                                (label = "Old Standard TT", value = "Old Standard TT"),
+                                (label = "Open Sans", value = "Open Sans"),
+                                (label = "Overpass", value = "Overpass"),
+                                (label = "PT Sans Narrow", value = "PT Sans Narrow"),
+                                (label = "Raleway", value = "Raleway"),
+                                (label = "Times New Roman", value = "Times New Roman")
+                            ],
+                            value = "Arial"
                         )
                     ]
                 ),
@@ -104,15 +112,23 @@ settings = html_div(
                             className = "dropdown",
                             placeholder = "Select a font",
                             options = [
-                                (label = "", value = ""),
-                                (label = "", value = ""),
-                                (label = "", value = ""),
-                                (label = "", value = ""),
-                                (label = "", value = ""),
-                                (label = "", value = ""),
-                                (label = "", value = ""),
-                                (label = "", value = "")
-                            ]
+                                (label = "Arial", value = "Arial"),
+                                (label = "Balto", value = "Balto"),
+                                (label = "Calibri", value = "Calibri"),
+                                (label = "Courier New", value = "Courier New"),
+                                (label = "Droid Sans", value = "Droid Sans"),
+                                (label = "Droid Serif", value = "Droid Serif"),
+                                (label = "Droid Sans Mono", value = "Droid Sans Mono"),
+                                (label = "Gravitas One", value = "Gravitas One"),
+                                (label = "Helvetica", value = "Helvetica"),
+                                (label = "Old Standard TT", value = "Old Standard TT"),
+                                (label = "Open Sans", value = "Open Sans"),
+                                (label = "Overpass", value = "Overpass"),
+                                (label = "PT Sans Narrow", value = "PT Sans Narrow"),
+                                (label = "Raleway", value = "Raleway"),
+                                (label = "Times New Roman", value = "Times New Roman")
+                            ],
+                            value = "Arial"
                         )
                     ]
                 )

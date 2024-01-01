@@ -1,56 +1,35 @@
 using Dash
 using DashCoreComponents
-using DashDaq
 using DashHtmlComponents
 using DashTable
-using DataFrames
 
-include("../../dash/settings.jl")
+include("../../dash/layout/settings.jl")
+include("../../dash/components/dcc_upload.jl")
+include("../../dash/components/dashtable_export.jl")
 
 combined = html_div(
     id = "combined",
     className = "page",
-    children=[
+    children = [
         html_div(
-            id = "combined-header", 
-            className = "header", 
-            html_h1(
-                id = "combined-title", 
-                className = "title", 
-                "Combined"
-            )
+            id = "combined-header",
+            className = "page-header",
+            html_h1(id = "combined-title", className = "title", "Combined"),
         ),
         settings,
         html_div(
-            id = "combined-container",
-            className = "upload-container",
-            children=[
-                dcc_upload(
-                    id = "combined-upload-container",
-                    className = "upload-container",
-                    html_button(
-                        id = "combined-upload-text", 
-                        className = "upload-text",
-                        children=[
-                            "Drag and Drop or ", 
-                            html_a(
-                                id = "combined-upload-button",
-                                className = "upload-button",
-                                "Select Files"
-                            )
-                        ]
-                    )
+            id = "combined-upload-export-table-container",
+            className = "upload-export-table-container",
+            children = [
+                html_div(
+                    id = "combined-upload-export-container",
+                    className = "upload-export-container",
+                    children = [upload, dashtable_export],
                 ),
-                dash_datatable(
-                    id = "combined-upload-container",
-                    export_format = "csv",
-                    editable = true,
-                    tooltip_delay = 0,
-                    tooltip_duration = nothing,
-                ),
-                dcc_graph(
-                    id = "combined-upload-graph",
-                    className = "table"
+                html_div(
+                    id = "combined-table-container",
+                    className = "table-container",
+                    dcc_graph(id = "combined-table", className = "table")
                 )
             ]
         )

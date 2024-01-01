@@ -10,9 +10,9 @@ using CSV
 using XLSX
 using Colors
 
-include("navbar.jl")
-include("footer.jl")
-include("fab.jl")
+include("layout/navbar.jl")
+include("layout/footer.jl")
+include("components/fab.jl")
 include("pages/home.jl")
 include("pages/combined.jl")
 include("pages/cohort_studies.jl")
@@ -37,13 +37,13 @@ external_scripts::Vector{String} = [
 ]
 
 app = dash(
-    url_base_pathname="/",
-    assets_folder=assets_folder,
-    external_stylesheets=external_stylesheets,
-    external_scripts=external_scripts,
-    suppress_callback_exceptions=true,
-    prevent_initial_callbacks=true,
-    meta_tags=[
+    url_base_pathname = "/",
+    assets_folder = assets_folder,
+    external_stylesheets = external_stylesheets,
+    external_scripts = external_scripts,
+    suppress_callback_exceptions = true,
+    prevent_initial_callbacks = true,
+    meta_tags = [
         Dict("charset" => "utf-8"),
         Dict("name" => "viewport", "content" => "width=device-width, initial-scale=1.0"),
         Dict("name" => "description", "content" => "STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology"),
@@ -54,7 +54,7 @@ app = dash(
 
 app.title = "STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology"
 
-content = html_div(id="page-content")
+content = html_div(id = "page-content")
 
 app.layout = html_div([dcc_location(id = "url"), navbar, fab, content, footer])
 
@@ -63,19 +63,19 @@ callback!(app, Output("page-content", "children"), Input("url", "pathname")) do 
         return home
     elseif pathname == "/combined"
         return combined
-    elseif pathname == "/cohort studies"
+    elseif pathname == "/cohort_studies"
         return cohort_studies
-    elseif pathname == "/case-control studies"
+    elseif pathname == "/case-control_studies"
         return case_control_studies
-    elseif pathname == "/cross-sectional studies"
+    elseif pathname == "/cross-sectional_studies"
         return cross_sectional_studies
-    elseif pathname == "/conference abstracts"
+    elseif pathname == "/conference_abstracts"
         return conference_abstracts
     else
         return not_found_404
     end
 end
 
-run_server(app, "0.0.0.0", debug=true)
+run_server(app, "0.0.0.0", debug = true)
 
 #= go to http://127.0.0.1:8050 =#
