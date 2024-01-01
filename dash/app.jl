@@ -31,9 +31,10 @@ external_stylesheets::Vector{String} = [
 ]
 
 external_scripts::Vector{String} = [
-    "https://www.googletagmanager.com/gtag/js?id=TAG_ID",
-    "/dash/assets/js/gtag.js",
-    "/dash/assets/js/fab.js"
+    #"https://www.googletagmanager.com/gtag/js?id=TAG_ID",
+    #"/dash/assets/js/gtag.js",
+    "/dash/assets/js/fab.js",
+    "/dash/assets/js/links.js",
 ]
 
 app = dash(

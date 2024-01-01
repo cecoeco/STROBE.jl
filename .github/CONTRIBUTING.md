@@ -12,6 +12,10 @@ Thank you for considering contributing to STROBE.jl I appreciate your help in ma
 6. Push your branch to your fork on GitHub:
 7. Open a pull request on the [main repository](https://github.com/cecoeco/STROBE.jl) with a brief description of your changes.
 
+## ColPrac
+
+For additional guidance on contributing to Julia packages checkout [ColPrac guide for collaborative practices.](https://github.com/SciML/ColPrac).
+
 ## Code of Conduct
 
 Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.

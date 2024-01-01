@@ -1218,14 +1218,22 @@ button:hover {
   margin-right: 10px;
 }
 
+.upload-container {
+  margin-right: 25px;
+}
+
 .upload-button {
   border-style: dashed;
   border-width: 1px;
-  width: 50vw;
+  width: 60vw;
 }
 
 .upload-button:hover {
   border-color: #bbb;
+}
+
+.export {
+  width: 20vw;
 }
 
 .upload-export-table-container {
@@ -1234,7 +1242,8 @@ button:hover {
 }
 
 .upload-export-container {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
 }
 
 .table {
