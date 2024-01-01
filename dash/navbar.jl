@@ -16,41 +16,66 @@ navbar = dbc_nav(
                 html_li(
                     id = "STROBE.jl-nav",
                     className = "nav-item",
-                    dbc_navlink(
-                        id="STROBE.jl-link",
-                        className="nav-link",
-                        "STROBE.jl", 
-                        href = "https://github.com/cecoeco/STROBE.jl",
-                        active = "exact"
+                    html_button(
+                        id="STROBE.jl-nav-button",
+                        className="nav-item-button",
+                        dbc_navlink(
+                            id = "STROBE.jl-link",
+                            className = "nav-link",
+                            "STROBE.jl",
+                            href = "https://github.com/cecoeco/STROBE.jl",
+                            active = "exact"
+                        )
                     )
                 ),
                 html_li(
                     id="home-nav", 
                     className="nav-item", 
-                    dbc_navlink(
-                        id="home-link",
-                        className="nav-link",
-                        "Home", 
-                        href="/home", 
-                        active = "exact"
+                    html_button(
+                        id = "home-nav-button",
+                        className = "nav-item-button",
+                        dbc_navlink(
+                            id = "home-link",
+                            className = "nav-link",
+                            "Home",
+                            href = "/home",
+                            active = "exact"
+                        )
                     )
                 ),
                 html_li(
-                    id="checklists-nav",
+                    id="checklists-nav-list",
                     className="nav-item dropdown", 
+                    html_div(
+                        id = "checklists-nav",
+                        className = "nav-item",
+                        children=[
+                            dcc_checklist(
+                                id = "dropdown-input",
+                                className = "dropdown-input",
+                                options=[
+                                    Dict("label" => "", "value" => ""),
+                                ]
+                            ),
+                            html_button(
+                                id = "dropdown-button",
+                                className = "dropdown-button",
+                                type = "button",
+                                children = [
+                                    dbc_navlink(
+                                        id = "checklists-link",
+                                        className = "nav-link",
+                                        "Checklists"
+                                    ),
+                                    html_i(
+                                        id = "dropdown-icon",
+                                        className = "fa-solid fa-caret-down"
+                                    )
+                                ]
+                            )
+                        ]
+                    ),
                     children=[
-                        html_button(
-                            id="dropdown-button",
-                            className="dropdown-button",
-                            type="button",
-                            children=[
-                                "Checklists",
-                                html_i(
-                                    id="dropdown-icon",
-                                    className="fa-solid fa-caret-down"
-                                )
-                            ]
-                        ),
                         html_ul(
                             id="dropdown-menu", 
                             className="dropdown-menu", 
@@ -120,23 +145,27 @@ navbar = dbc_nav(
                     html_form(
                         id="search-form", 
                         className="search-form", 
-                        children=[
-                            dcc_input(
-                                id="search-input", 
-                                className="search-input", 
-                                type="search", 
-                                placeholder="Search"
-                            ),
-                            html_button(
-                                id="search-button",
-                                className="search-button",
-                                type="submit",
-                                html_i(
-                                    id="search-submit", 
-                                    className="search-submit fa-solid fa-magnifying-glass"
+                        html_div(
+                            id="search-container",
+                            className="search-container",
+                            children=[
+                                dcc_input(
+                                    id = "search-input",
+                                    className = "search-input",
+                                    type = "search",
+                                    placeholder = "Search",
+                                ),
+                                html_button(
+                                    id = "search-button",
+                                    className = "search-button",
+                                    type = "submit",
+                                    html_i(
+                                        id = "search-submit",
+                                        className = "search-submit fa-solid fa-magnifying-glass",
+                                    )
                                 )
-                            )
-                        ]
+                            ]
+                        )
                     )                
                 )
             ]

@@ -1,16 +1,19 @@
 .fab-container {
     position: fixed;
-    bottom: 35px;
+    bottom: 50px;
     right: 35px;
     z-index: 99999;
+    margin: 0px;
+    padding: 0px;
 }
 
 .fab {
-    background-color: #0d1117;
+    background-color: rgba(13, 17, 23, 0.75);
+    display: inline-block;
     color: #c9d1d9;
     border: none;
     margin: 0px;
-    padding: 0px;
+    padding: 10px;
     text-align: center;
     font-size: 10px;
     cursor: pointer;

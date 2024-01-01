@@ -28,7 +28,7 @@ combined = html_div(
                 dcc_upload(
                     id = "combined-upload-container",
                     className = "upload-container",
-                    html_div(
+                    html_button(
                         id = "combined-upload-text", 
                         className = "upload-text",
                         children=[
@@ -50,7 +50,7 @@ combined = html_div(
                 ),
                 dcc_graph(
                     id = "combined-upload-graph",
-                    className = "graph"
+                    className = "table"
                 )
             ]
         )

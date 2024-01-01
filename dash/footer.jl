@@ -24,14 +24,10 @@ footer = html_footer(
                         html_small(
                             id = "footer-text",
                             className = "footer-text",
-                            "STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology © 2023 Ceco Elijah Maples",
+                            " STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology © 2023 Ceco Elijah Maples",
                         )
                     ]
                 )
-            ),
-            html_br(
-                id="footer-line-break",
-                className="line-break"
             ),
             html_div(
                 id="footer-line-2",

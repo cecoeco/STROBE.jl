@@ -898,7 +898,7 @@ there.
 body {
   min-height: 100vh;
   margin: 0;
-  padding: 0;
+  padding: 0px 25px;
   background-color: rgb(241, 245, 255);
 }
 
@@ -927,22 +927,99 @@ sub {
 }
 
 a {
-  color: black;
+  color: #555;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #555;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 15px 0px;
+  padding: 0px;
+}
+.navbar-container a {
+  color: #555;
+}
+
+.nav-items {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav-item {
+  margin: 0px;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+#dropdown-icon {
+  margin: 0px;
+  padding: 0px 0px 0px 10px;
+  font-size: 1.5rem;
+}
+
+.checklists-nav {
+  display: flex;
+  align-items: center;
+}
+
+.settings-container {
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  padding: 25px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0px 0px;
+  padding: 0px;
+}
+
+.footer-line {
+  margin: 5px 0px;
+}
+
+button {
+  cursor: pointer;
+  color: #555;
+}
+
+button:hover {
+  color: #555;
 }
 
 .fab-container {
   position: fixed;
-  bottom: 35px;
+  bottom: 50px;
   right: 35px;
   z-index: 99999;
+  margin: 0px;
+  padding: 0px;
 }
 
 .fab {
-  background-color: #0d1117;
+  background-color: rgba(13, 17, 23, 0.75);
+  display: inline-block;
   color: #c9d1d9;
   border: none;
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
   text-align: center;
   font-size: 10px;
   cursor: pointer;
@@ -986,12 +1063,54 @@ a {
   cursor: pointer;
 }
 
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.colorpicker {
+  display: inline-flex;
+}
+
 .colorpicker .chrome-picker {
   border-radius: 0% !important;
   border: none !important;
   box-shadow: none !important;
-  background: none !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
   padding: 0 !important;
   margin: 0 !important;
-  width: 100% !important;
+}
+.colorpicker .chrome-picker input {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 8px;
+}
+
+#headerfillcolor {
+  margin-right: 10px;
+}
+
+#headertextcolor {
+  margin-right: 10px;
+}
+
+#cellfillcolor {
+  margin-right: 10px;
+}
+
+#celltextcolor {
+  margin-right: 10px;
+}
+
+.upload-container {
+  margin-top: 25px;
+  padding: 0px;
+}
+
+.table {
+  margin-top: 25px;
+  padding: 0px;
 }
