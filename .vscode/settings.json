@@ -6,7 +6,7 @@
     {
       "format": "expanded",
       "extensionName": ".css",
-      "savePath": "/dash/assets/css",
+      "savePath": "/dash/assets/dist/CSS",
       "savePathReplacementPairs": null
     }
   ]

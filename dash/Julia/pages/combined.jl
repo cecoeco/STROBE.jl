@@ -3,9 +3,9 @@ using DashCoreComponents
 using DashHtmlComponents
 using DashTable
 
-include("../../dash/layout/settings.jl")
-include("../../dash/components/dcc_upload.jl")
-include("../../dash/components/dashtable_export.jl")
+include("../../../dash/Julia/layout/settings.jl")
+include("../../../dash/Julia/components/table_upload.jl")
+include("../../../dash/Julia/components/table_export.jl")
 
 combined = html_div(
     id = "combined",
@@ -24,7 +24,7 @@ combined = html_div(
                 html_div(
                     id = "combined-upload-export-container",
                     className = "upload-export-container",
-                    children = [upload, dashtable_export],
+                    children = [table_upload, table_export],
                 ),
                 html_div(
                     id = "combined-table-container",

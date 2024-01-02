@@ -20,22 +20,21 @@ include("pages/case-control_studies.jl")
 include("pages/cross-sectional_studies.jl")
 include("pages/conference_abstracts.jl")
 include("pages/404.jl")
-include("../src/STROBE.jl")
+include("../../src/STROBE.jl")
 
 assets_folder::String = "dash/assets"
 
-external_stylesheets::Vector{String} = [
-    "https://use.fontawesome.com/releases/v6.5.1/css/all.css",
-    "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200",
-    "/dash/assets/css/app.css"
-]
+CSS_app::String = joinpath(assets_folder, "dist/CSS/app.css")
+JavaScript_app::String = joinpath(assets_folder, "dist/JavaScript/app.js")
 
-external_scripts::Vector{String} = [
-    #"https://www.googletagmanager.com/gtag/js?id=TAG_ID",
-    #"/dash/assets/js/gtag.js",
-    "/dash/assets/js/fab.js",
-    "/dash/assets/js/links.js",
-]
+fontawesome::String = "https://use.fontawesome.com/releases/v6.5.1/css/all.css"
+googlefonts::String = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+
+tag_id::String = ""
+googletagmanager::String = "https://www.googletagmanager.com/gtag/js?id=$tag_id"
+
+external_stylesheets::Vector{String} = [fontawesome, googlefonts, CSS_app]
+external_scripts::Vector{String} = [googletagmanager, JavaScript_app]
 
 app = dash(
     url_base_pathname = "/",
@@ -55,9 +54,9 @@ app = dash(
 
 app.title = "STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology"
 
-content = html_div(id = "page-content")
+page = html_div(id = "page-content")
 
-app.layout = html_div([dcc_location(id = "url"), navbar, fab, content, footer])
+app.layout = html_div([dcc_location(id = "url"), navbar, fab, page, footer])
 
 callback!(app, Output("page-content", "children"), Input("url", "pathname")) do pathname
     if pathname == "/home"

@@ -2,7 +2,7 @@ using Dash
 using DashCoreComponents
 using DashHtmlComponents
 
-upload = dcc_upload(
+table_upload = dcc_upload(
     id = "upload-container",
     className = "upload-container",
     html_a(

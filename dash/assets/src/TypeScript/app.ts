@@ -1,0 +1,1 @@
+import { gtag, event } from './gtag';
