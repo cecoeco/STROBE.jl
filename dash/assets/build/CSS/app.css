@@ -1117,63 +1117,102 @@ button:hover {
   color: #555;
 }
 
-.fab-container {
+.fab {
   position: fixed;
-  bottom: 50px;
-  right: 35px;
+  bottom: 45px;
+  right: 45px;
   z-index: 99999;
+  background-color: rgba(13, 17, 23, 0.791);
+  border: none;
+  color: #c9d1d9;
   margin: 0px;
   padding: 0px;
-}
-
-.fab {
-  background-color: rgba(13, 17, 23, 0.75);
-  display: inline-block;
-  color: #c9d1d9;
-  border: none;
-  margin: 0px;
-  padding: 10px;
   text-align: center;
-  font-size: 10px;
-  cursor: pointer;
-}
-
-#fab-star {
-  font-size: 20px;
-  margin-left: 2.5px;
-  color: #c9d1d9;
+  border-radius: 4px;
 }
 
 #fab-link {
+  display: inline-flex;
   color: #c9d1d9;
   text-align: center;
   text-decoration: none;
+  align-items: center;
   font-size: 20px;
   margin: 0px;
   padding: 0px;
-  cursor: pointer;
+}
+
+#fab-star {
+  display: flex;
+  font-size: 20px;
+  margin: 0px 10px;
+  color: #c9d1d9;
 }
 
 #fab-text {
-  color: #c9d1d9;
-  text-align: center;
+  display: none;
+  font-weight: bold;
+  font-size: 15px;
   margin: 0px;
+  margin-right: 10px;
+  margin-left: -4px;
   padding: 0px;
-  cursor: pointer;
 }
-#fab-text a {
-  color: #c9d1d9;
-  text-align: center;
-  margin: 0px;
-  padding: 0px;
-  cursor: pointer;
+
+#fab:hover #fab-text {
+  display: flex;
 }
-#fab-text small {
-  color: #c9d1d9;
-  text-align: center;
-  margin: 0px;
-  padding: 0px;
-  cursor: pointer;
+
+#fab:not(:hover) #fab-text {
+  display: flex;
+}
+
+@keyframes fabOpen {
+  0% {
+    width: 40px;
+  }
+  100% {
+    width: 190px;
+  }
+}
+@keyframes fabClose {
+  0% {
+    width: 190px;
+  }
+  100% {
+    width: 40px;
+  }
+}
+@keyframes fabStarSpinOpen {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fabStarSpinClose {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+#fab:hover {
+  animation: fabOpen 0.5s ease-out forwards;
+}
+
+#fab:not(:hover) {
+  animation: fabClose 0.5s ease-out forwards;
+}
+
+#fab:hover #fab-star {
+  animation: fabStarSpinOpen 0.75s;
+}
+
+#fab:not(:hover) #fab-star {
+  animation: fabStarSpinClose 0.75s;
 }
 
 .search-container {

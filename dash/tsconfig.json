@@ -10,6 +10,8 @@
     "noUncheckedIndexedAccess": true,
     "skipLibCheck": true,
     "outDir": "/dist/JavaScript",
+    "baseUrl": "/src",
     "removeComments": true
-  }
+  },
+  "include": ["**/app.ts"]
 }

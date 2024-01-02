@@ -24,8 +24,8 @@ include("../../src/STROBE.jl")
 
 assets_folder::String = "dash/assets"
 
-CSS_app::String = joinpath(assets_folder, "dist/CSS/app.css")
-JavaScript_app::String = joinpath(assets_folder, "dist/JavaScript/app.js")
+CSS_app::String = joinpath(assets_folder, "build/CSS/app.css")
+JavaScript_app::String = joinpath(assets_folder, "build/JavaScript/app.js")
 
 fontawesome::String = "https://use.fontawesome.com/releases/v6.5.1/css/all.css"
 googlefonts::String = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
