@@ -6,15 +6,23 @@
 }
 
 .radioitems input[type=radio] {
-    display: inline;
-    margin: 0px 5px;
+    display: flex;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    margin: 0px 12px;
     padding: 0px;
 }
 
 .radioitems label {
     display: inline;
     align-items: center;
-    margin: 0px 5px;
+    margin: 0px 12px;
     padding: 0px;
-    font-size: 12.5px;
+    font-size: 0px;
+
+}
+
+.material-symbols-outlined {
+    margin: 0px 25px;
 }
