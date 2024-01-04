@@ -1,5 +1,8 @@
 .fab {
+    display: inline-flex;
     position: fixed;
+    align-items: center;
+    overflow: hidden;
     bottom: 45px;
     right: 45px;
     z-index: 99999;
@@ -7,8 +10,7 @@
     border: none;
     color: #c9d1d9;
     margin: 0px;
-    padding: 0px;
-    text-align: center;
+    padding: 30px 0px;
     border-radius: 4px;
 }
 
@@ -23,21 +25,22 @@
     padding: 0px;
 }
 
-
 #fab-star {
     display: flex;
-    font-size: 20px;
+    align-items: center;
+    font-size: 35px;
     margin: 0px 10px;
+    padding: 0px;
     color: #c9d1d9;
 }
 
 #fab-text {
     display: none;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 25px;
     margin: 0px;
     margin-right: 10px;
-    margin-left: -4px;
+    margin-left: 0px;
     padding: 0px;
 }
 
@@ -51,21 +54,21 @@
 
 @keyframes fabOpen {
     0% {
-        width: 40px;
+        width: 60px;
     }
 
     100% {
-        width: 190px;
+        width: 300px;
     }
 }
 
 @keyframes fabClose {
     0% {
-        width: 190px;
+        width: 300px;
     }
 
     100% {
-        width: 40px;
+        width: 60px;
     }
 }
 
@@ -90,17 +93,17 @@
 }
 
 #fab:hover {
-    animation: fabOpen 0.5s ease-out forwards;
+    animation: fabOpen 500ms ease-out forwards;
 }
 
 #fab:not(:hover) {
-    animation: fabClose 0.5s ease-out forwards;
+    animation: fabClose 500ms ease-out forwards;
 }
 
 #fab:hover #fab-star {
-    animation: fabStarSpinOpen .75s;
+    animation: fabStarSpinOpen 750ms;
 }
 
 #fab:not(:hover) #fab-star {
-    animation: fabStarSpinClose .75s;
+    animation: fabStarSpinClose 750ms;
 }

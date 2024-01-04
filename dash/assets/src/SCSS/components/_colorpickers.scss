@@ -16,18 +16,20 @@
     }
 }
 
-#headerfillcolor {
-    margin-right: 10px;
+.colors-container {
+    width: 40%;
+    justify-content: center;
+    text-align: center;
+    display: inline-flex;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 25px;
 }
 
-#headertextcolor {
-    margin-right: 10px;
+#fill-color-container {
+    width: 50%;
 }
 
-#cellfillcolor {
-    margin-right: 10px;
-}
-
-#celltextcolor {
-    margin-right: 10px;
+#text-color-container {
+    width: 50%;
 }

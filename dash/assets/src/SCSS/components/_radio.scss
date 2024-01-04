@@ -1,0 +1,20 @@
+.radioitems {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.radioitems input[type=radio] {
+    display: inline;
+    margin: 0px 5px;
+    padding: 0px;
+}
+
+.radioitems label {
+    display: inline;
+    align-items: center;
+    margin: 0px 5px;
+    padding: 0px;
+    font-size: 12.5px;
+}
