@@ -24,8 +24,16 @@ include("../../src/STROBE.jl")
 
 assets_folder::String = "dash/assets"
 
-CSS_app::String = joinpath(assets_folder, "build/CSS/app.css")
-JavaScript_app::String = joinpath(assets_folder, "build/JavaScript/app.js")
+app_css::String = joinpath(assets_folder, "CSS/app.css")
+
+alert_js::String = joinpath(assets_folder, "JavaScript/alert.js")
+fab_js::String = joinpath(assets_folder, "JavaScript/fab.js")
+gtag_js::String = joinpath(assets_folder, "JavaScript/gtag.js")
+links_js::String = joinpath(assets_folder, "JavaScript/links.js")
+modals_js::String = joinpath(assets_folder, "JavaScript/modals.js")
+searchbar_js::String = joinpath(assets_folder, "JavaScript/searchbar.js")
+
+local_js::Vector{String} = [alert_js, fab_js, gtag_js, links_js, modals_js, searchbar_js]
 
 fontawesome::String = "https://use.fontawesome.com/releases/v6.5.1/css/all.css"
 googlefonts::String = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -33,8 +41,8 @@ googlefonts::String = "https://fonts.googleapis.com/css2?family=Material+Symbols
 tag_id::String = ""
 googletagmanager::String = "https://www.googletagmanager.com/gtag/js?id=$tag_id"
 
-external_stylesheets::Vector{String} = [fontawesome, googlefonts, CSS_app]
-external_scripts::Vector{String} = [googletagmanager, JavaScript_app]
+external_stylesheets::Vector{String} = [fontawesome, googlefonts, app_css]
+external_scripts::Vector{String} = [googletagmanager, local_js]
 
 app = dash(
     url_base_pathname = "/",
