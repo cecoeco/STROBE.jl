@@ -1,2 +1,3 @@
 *.css linguist-language=SCSS
 *.js linguist-language=TypeScript
+*.bib linguist-language=TeX
