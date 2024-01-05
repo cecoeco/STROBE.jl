@@ -1,7 +1,16 @@
+[![Julia](https://img.shields.io/badge/Julia-9558B2?logo=julia&logoColor=white)](https://julialang.org/)
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.1%20adopted-ff69b4.svg)](https://www.contributor-covenant.org) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-coral.svg)](https://opensource.org/licenses/MIT)
+[![ColPrac: Contributor's Guide on Collaborative Practices for Community Packages](https://img.shields.io/badge/ColPrac-Contributor's%20Guide-blueviolet)](https://github.com/SciML/ColPrac)
+[![Build Status](https://github.com/cecoeco/STROBE.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/cecoeco/STROBE.jl/actions/workflows/CI.yml?query=branch%3Amain) 
+[![Coverage](https://codecov.io/gh/cecoeco/STROBE.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/cecoeco/STROBE.jl)
+
 <div align="center">
 <h1><b>STROBE.jl</b></h1>
 </div>
 
+STROBE.jl is a Julia package and web application built using the [Dash framework](https://dash.plotly.com/julia). Based on the <i><b>ST</b>trengthening the <b>R</b>eporting of <b>Ob</b>servational <b>S</b>tudies</i> in <b>E</b>pidemiology (STROBE) statement ([Elm et al., 2017](https://doi.org/10.1016/j.jclinepi.2007.11.008)).
 
 
 ## References :books:

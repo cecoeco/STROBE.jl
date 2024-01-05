@@ -2,7 +2,7 @@ using Dash
 using DashCoreComponents
 using DashHtmlComponents
 
-alignment = html_div(
+text_alignment = html_div(
     id = "alignment-container",
     className = "alignment-container",
     children = [

@@ -8,5 +8,5 @@ table_export = dash_datatable(
     export_format = "csv",
     editable = true,
     tooltip_delay = 0,
-    tooltip_duration = nothing,
+    tooltip_duration = nothing
 )

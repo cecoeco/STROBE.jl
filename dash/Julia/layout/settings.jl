@@ -5,7 +5,8 @@ using DashHtmlComponents
 
 include("../components/sliders.jl")
 include("../components/fonts.jl")
-include("../components/alignment.jl")
+include("../components/text_styling.jl")
+include("../components/text_alignment.jl")
 include("../components/colorpickers.jl")
 
 settings = html_div(
@@ -23,7 +24,8 @@ settings = html_div(
             children = [
                 sliders,
                 fonts,
-                alignment,
+                text_alignment,
+                text_styling,
                 colorpickers
             ]
         )
