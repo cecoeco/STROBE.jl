@@ -33,16 +33,27 @@ links_js::String = joinpath(assets_folder, "JavaScript/links.js")
 modals_js::String = joinpath(assets_folder, "JavaScript/modals.js")
 searchbar_js::String = joinpath(assets_folder, "JavaScript/searchbar.js")
 
-local_js::Vector{String} = [alert_js, fab_js, gtag_js, links_js, modals_js, searchbar_js]
-
 fontawesome::String = "https://use.fontawesome.com/releases/v6.5.1/css/all.css"
 googlefonts::String = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 
 tag_id::String = ""
 googletagmanager::String = "https://www.googletagmanager.com/gtag/js?id=$tag_id"
 
-external_stylesheets::Vector{String} = [fontawesome, googlefonts, app_css]
-external_scripts::Vector{String} = [googletagmanager, local_js]
+external_stylesheets::Vector{String} = [
+    fontawesome, 
+    googlefonts, 
+    app_css
+]
+
+external_scripts::Vector{String} = [
+    googletagmanager, 
+    alert_js, 
+    fab_js, 
+    gtag_js, 
+    links_js, 
+    modals_js, 
+    searchbar_js
+]
 
 app = dash(
     url_base_pathname = "/",
@@ -76,6 +87,6 @@ callback!(app, Output("page-content", "children"), Input("url", "pathname")) do 
     else return not_found_404 end
 end
 
-run_server(app, "0.0.0.0", debug = true)
+run_server(app, "0.0.0.0", debug = false)
 
 #= go to http://127.0.0.1:8050 =#

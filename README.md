@@ -10,7 +10,7 @@
 <h1><b>STROBE.jl</b></h1>
 </div>
 
-STROBE.jl is a Julia package and web application built using the [Dash framework](https://dash.plotly.com/julia). Based on the <i><b>ST</b>trengthening the <b>R</b>eporting of <b>Ob</b>servational <b>S</b>tudies</i> in <b>E</b>pidemiology (STROBE) statement ([Elm et al., 2017](https://doi.org/10.1016/j.jclinepi.2007.11.008)).
+STROBE.jl is a Julia package and web application built using the [Dash framework](https://dash.plotly.com/julia). Based on the <b>ST</b>trengthening the <b>R</b>eporting of <b>Ob</b>servational Studies in <b>E</b>pidemiology (STROBE) statement ([Elm et al., 2017](https://doi.org/10.1016/j.jclinepi.2007.11.008)).
 
 
 ## References :books:

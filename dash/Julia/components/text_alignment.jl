@@ -11,7 +11,7 @@ text_alignment = html_div(
             id = "alignment-horizontal",
             children = [
                 html_div(
-                    id = "alignment-horizontal-container",
+                    id = "alignment-horizontal-icon-container",
                     className = "alignment-icon-container",
                     children = [
                         html_span(
@@ -51,7 +51,7 @@ text_alignment = html_div(
             id = "alignment-vertical",
             children = [
                 html_div(
-                    id = "alignment-vertical-container",
+                    id = "alignment-vertical-icon-container",
                     className = "alignment-icon-container",
                     children = [
                         html_span(
