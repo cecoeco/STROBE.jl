@@ -10,7 +10,7 @@ searchbar = html_li(
         className = "search-form",
         html_div(
             id = "search-container",
-            className = "search-container gcse-searchbox-only",
+            className = "search-container",
             children = [
                 dcc_input(
                     id = "search-input",
