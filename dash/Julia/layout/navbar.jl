@@ -1,7 +1,8 @@
 using Dash
 using DashBootstrapComponents
-using DashCoreComponents
 using DashHtmlComponents
+
+include("../components/searchbar.jl")
 
 navbar = dbc_nav(
     id="navbar",
@@ -24,6 +25,7 @@ navbar = dbc_nav(
                             className = "nav-link",
                             "STROBE.jl",
                             href = "https://github.com/cecoeco/STROBE.jl",
+                            target = "_blank",
                             active = "exact"
                         )
                     )
@@ -126,35 +128,7 @@ navbar = dbc_nav(
                         )
                     ]
                 ),
-                html_li(
-                    id="search-nav", 
-                    className="nav-item search", 
-                    html_form(
-                        id="search-form", 
-                        className="search-form", 
-                        html_div(
-                            id="search-container",
-                            className="search-container",
-                            children=[
-                                dcc_input(
-                                    id = "search-input",
-                                    className = "search-input",
-                                    type = "search",
-                                    placeholder = "Search",
-                                ),
-                                html_button(
-                                    id = "search-button",
-                                    className = "search-button",
-                                    type = "submit",
-                                    html_i(
-                                        id = "search-submit",
-                                        className = "search-submit fa-solid fa-magnifying-glass",
-                                    )
-                                )
-                            ]
-                        )
-                    )                
-                )
+                searchbar
             ]
         )
     )

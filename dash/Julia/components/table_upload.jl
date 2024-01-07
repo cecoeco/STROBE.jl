@@ -1,6 +1,8 @@
 using Dash
 using DashCoreComponents
 using DashHtmlComponents
+using CSV
+using DataFrames
 
 table_upload = dcc_upload(
     id = "upload-container",

@@ -24,35 +24,22 @@ include("../../src/STROBE.jl")
 
 assets_folder::String = "dash/assets"
 
-app_css::String = joinpath(assets_folder, "CSS/app.css")
+fontawesome_css::String = "https://use.fontawesome.com/releases/v6.5.1/css/all.css"
+googlefonts_css::String = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 
-alert_js::String = joinpath(assets_folder, "JavaScript/alert.js")
-fab_js::String = joinpath(assets_folder, "JavaScript/fab.js")
-gtag_js::String = joinpath(assets_folder, "JavaScript/gtag.js")
-links_js::String = joinpath(assets_folder, "JavaScript/links.js")
-modals_js::String = joinpath(assets_folder, "JavaScript/modals.js")
-searchbar_js::String = joinpath(assets_folder, "JavaScript/searchbar.js")
+external_stylesheets::Vector{String} = [fontawesome_css, googlefonts_css]
 
-fontawesome::String = "https://use.fontawesome.com/releases/v6.5.1/css/all.css"
-googlefonts::String = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+google_tag_manager_js::String = "https://www.googletagmanager.com/gtag/js?id=tag_id"
+programmable_search_engine_js::String = "https://cse.google.com/cse.js?cx=83683328822a24dfb"
 
-tag_id::String = ""
-googletagmanager::String = "https://www.googletagmanager.com/gtag/js?id=$tag_id"
+external_scripts::Vector{String} = []
 
-external_stylesheets::Vector{String} = [
-    fontawesome, 
-    googlefonts, 
-    app_css
-]
-
-external_scripts::Vector{String} = [
-    googletagmanager, 
-    alert_js, 
-    fab_js, 
-    gtag_js, 
-    links_js, 
-    modals_js, 
-    searchbar_js
+meta_tags = [
+    Dict("charset" => "utf-8"),
+    Dict("name" => "viewport", "content" => "width=device-width, initial-scale=1.0"),
+    Dict("name" => "description", "content" => "STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology"),
+    Dict("name" => "keywords", "content" => "Epidemiology, Observational Studies, Reporting, STROBE, Medicine, Public Health, Research, Biostatistics"),
+    Dict("name" => "author", "content" => "Ceco Elijah Maples")
 ]
 
 app = dash(
@@ -62,30 +49,39 @@ app = dash(
     external_scripts = external_scripts,
     suppress_callback_exceptions = true,
     prevent_initial_callbacks = true,
-    meta_tags = [
-        Dict("charset" => "utf-8"),
-        Dict("name" => "viewport", "content" => "width=device-width, initial-scale=1.0"),
-        Dict("name" => "description", "content" => "STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology"),
-        Dict("name" => "keywords", "content" => "Epidemiology, Observational Studies, Reporting, STROBE, Medicine, Public Health, Research, Biostatistics"),
-        Dict("name" => "author", "content" => "Ceco Elijah Maples")
-    ]
+    update_title = "Loading...",
+    meta_tags = meta_tags
 )
 
 app.title = "STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology"
+
+app.index_string = "
+<!DOCTYPE html>
+<html lang=\"en\">
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+        <script async src=\"$google_tag_manager_js\"></script>
+        <script async src=\"$programmable_search_engine_js\"></script>
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+"
 
 page = html_div(id = "page-content")
 
 app.layout = html_div([dcc_location(id = "url"), navbar, fab, page, footer])
 
-callback!(app, Output("page-content", "children"), Input("url", "pathname")) do pathname
-    if pathname == "/home" return home
-    elseif pathname == "/combined" return combined
-    elseif pathname == "/cohort_studies" return cohort_studies
-    elseif pathname == "/case-control_studies" return case_control_studies
-    elseif pathname == "/cross-sectional_studies" return cross_sectional_studies
-    elseif pathname == "/conference_abstracts" return conference_abstracts
-    else return not_found_404 end
-end
+include("callbacks/callbacks.jl")
 
 run_server(app, "0.0.0.0", debug = false)
 

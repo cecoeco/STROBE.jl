@@ -1,0 +1,7 @@
+include("navbar.jl")
+#include("table_upload.jl")
+include("sliders.jl")
+include("fonts.jl")
+include("text_alignment.jl")
+include("text_styling.jl")
+include("colorpickers.jl")
