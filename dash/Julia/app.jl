@@ -4,14 +4,13 @@ using DashCoreComponents
 using DashDaq
 using DashHtmlComponents
 using DashTable
+using HTTP
 using PlotlyJS
 using DataFrames
 using Base64
 using CSV
 using XLSX
 using Colors
-
-include("../../src/STROBE.jl")
 
 assets_folder::String = "dash/assets"
 
@@ -81,3 +80,5 @@ include("callbacks/callbacks.jl")
 run_server(app, "0.0.0.0", debug = true)
 
 #= go to http://127.0.0.1:8050 =#
+
+
