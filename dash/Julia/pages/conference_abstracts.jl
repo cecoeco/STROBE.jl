@@ -16,6 +16,6 @@ conference_abstracts = html_div(
             html_h1(id = "conference_abstracts-title", className = "title", "Conference Abstracts"),
         ),
         settings,
-        table_upload
+        #table_upload
     ]
 )

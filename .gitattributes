@@ -1,3 +1,2 @@
 # CSS is compiled from SCSS
 *.css linguist-language=SCSS
-*.min.js linguist-language=JavaScript

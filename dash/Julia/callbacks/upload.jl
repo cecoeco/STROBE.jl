@@ -40,8 +40,9 @@ callback!(
     Input("upload", "contents"),
     State("upload", "filename"),
     State("upload", "last_modified"),
-) do contents, filename, last_modified, pathname
+) do contents, filename, last_modified
     if !(contents isa Nothing)
-        return children = [parse_contents(c...) for c in zip(contents, filename, last_modified)]
+        children = [parse_contents(c...) for c in zip(contents, filename, last_modified)]
+        return children
     end
 end

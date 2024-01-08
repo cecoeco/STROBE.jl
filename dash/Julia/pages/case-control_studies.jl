@@ -16,6 +16,6 @@ case_control_studies = html_div(
             html_h1(id = "case-control_studies-title", className = "title", "Case-control Studies"),
         ),
         settings,
-        table_upload
+        #table_upload
     ]
 )

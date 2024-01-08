@@ -16,6 +16,6 @@ cohort_studies = html_div(
             html_h1(id = "cohort_studies-title", className = "title", "Cohort Studies"),
         ),
         settings,
-        table_upload
+        #table_upload
     ]
 )

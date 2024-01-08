@@ -16,10 +16,18 @@ table_upload = html_div(
                 html_button(
                     id = "upload-button",
                     className = "upload-button",
-                    "Drag and Drop or Select Files",
+                    "Drag and Drop or Select Files"
                 )
             )
         ),
-        html_div(id = "output-data-upload")
+        html_div(id = "output-data-upload"),
+        #=
+        dash_datatable(
+            id = "table",
+            data = combined_df,
+            columns = combined_df,
+            editable = true
+        )
+        =#
     ]
 )

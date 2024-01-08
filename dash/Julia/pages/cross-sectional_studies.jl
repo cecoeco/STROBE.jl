@@ -16,6 +16,6 @@ cross_sectional_studies = html_div(
             html_h1(id = "cross-sectional_studies-title", className = "title", "Cross-sectional Studies"),
         ),
         settings,
-        table_upload
+        #table_upload
     ]
 )
