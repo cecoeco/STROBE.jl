@@ -1,5 +1,5 @@
 callback!(app, Output("page-content", "children"), Input("url", "pathname")) do pathname
-    if pathname == "/home"
+    return if pathname == "/home"
         return home
     elseif pathname == "/combined"
         return combined

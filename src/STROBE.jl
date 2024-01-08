@@ -14,4 +14,11 @@ include("cross-sectional_studies.jl")
 include("conference_abstracts.jl")
 include("openapp.jl")
 
+export table
+export combined
+export cohort_studies
+export case_control_studies
+export cross_sectional_studies
+export conference_abstracts
+
 end

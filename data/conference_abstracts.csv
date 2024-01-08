@@ -1,0 +1,19 @@
+Item,Recommendation
+Title,"Indicate the study's design with a commonly used term in the title (e.g cohort, case- control, cross sectional)"
+Authors,Contact details for the corresponding author
+Study design,"Description of the study design (e.g cohort, case-control, cross sectional)"
+Objective,Specific objectives or hypothesis
+Methods,
+Setting,"Description of setting, follow-up dates or dates at which the outcome events occurred or at which the outcomes were present, as well as any points or ranges on other time scales for the outcomes (e.g., prevalence at age 18, 1998-2007)."
+Participants,"Cohort study—Give the most important eligibility criteria, and the most important sources and methods of selection of participants. Describe briefly the methods of follow-up
+ Case-control study—Give the major eligibility criteria, and the major sources and methods of case ascertainment and control selection
+ Cross-sectional study—Give the eligibility criteria, and the major sources and methods of selection of participants"
+,"Cohort study—For matched studies, give matching and number of exposed and unexposed
+ Case-control study—For matched studies, give matching criteria and the number of controls per case"
+Variables,Clearly define primary outcome for this report.
+Statistical methods,"Describe statistical methods, including those used to control for confounding"
+Results,
+Participants,Report Number of participants at the beginning and end of the study
+matching,"Report estimates of associations. If relevant, consider translating estimates of relative risk into absolute risk for a meaningful time period
+ Report appropriate measures of variability and uncertainty (e.g., odds ratios with confidence intervals"
+Conclusions,General interpretation of study results

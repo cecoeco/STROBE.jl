@@ -127,11 +127,11 @@ case_control_studies_df = DataFrame(
     ]
 )
 
-function case_control(
+function case_control_studies(
     save_location::String = pwd(),
-    filename::String = "case_control",
+    filename::String = "case_control_studies",
     filetype::String = "csv",
-    sheetname::String = "case_control",
+    sheetname::String = "case_control_studies",
 )
     if filetype == "csv"
         CSV.write("$save_location/$filename.csv", case_control_studies_df)
@@ -144,10 +144,10 @@ function case_control(
     end
 end
 
-function case_control_csv(save_location::String = pwd(), filename::String = "case_control")
+function case_control_studies_csv(save_location::String = pwd(), filename::String = "case_control_studies")
     CSV.write("$save_location/$filename.csv", case_control_studies_df)
 end
 
-function case_control_xlsx(save_location::String = pwd(), filename::String = "case_control")
+function case_control_studies_xlsx(save_location::String = pwd(), filename::String = "case_control_studies")
     XLSX.writetable("$save_location/$filename.xlsx", case_control_studies_df)
 end

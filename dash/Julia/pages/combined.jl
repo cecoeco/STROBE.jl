@@ -3,8 +3,8 @@ using DashCoreComponents
 using DashHtmlComponents
 using DashTable
 
-include("../../../dash/Julia/layout/layout.jl")
-include("../../../dash/Julia/components/components.jl")
+include("../layout/layout.jl")
+include("../components/components.jl")
 
 combined = html_div(
     id = "combined",
@@ -16,6 +16,7 @@ combined = html_div(
             html_h1(id = "combined-title", className = "title", "Combined"),
         ),
         settings,
-        table_upload
+        table_upload,
+        
     ]
 )

@@ -2,7 +2,7 @@ using Dash
 using DashDaq
 using DashHtmlComponents
 
-daq_colorpicker_size = 150
+daq_colorpicker_size = 125
 
 colorpickers = html_div(
     id = "colors-container",

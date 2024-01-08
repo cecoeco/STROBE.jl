@@ -1,13 +1,4 @@
-using Dash
-using DashCoreComponents
-using DashHtmlComponents
-using DashTable
-using Base64
-using Core: Typeof
-using CSV
-using DataFrames
-
-function parse_contents(contents, filename)
+function parse_contents(contents, filename, date)
     content_type, content_string = split(contents, ',')
     decoded = base64decode(content_string)
     df = DataFrame()
@@ -22,12 +13,14 @@ function parse_contents(contents, filename)
     end
     return html_div(
         children = [
+            html_h5(filename),
+            html_h6(Libc.strftime(date)),
             dash_datatable(
                 id = "table-export",
                 data = [Dict(pairs(NamedTuple(eachrow(df)[j]))) for j = 1:nrow(df)],
                 columns = [Dict("name" => i, "id" => i) for i in names(df)],
-                export_format = "csv",
                 editable = true,
+                export_format = "csv"
             ),
             html_hr(),  # horizontal line
 
@@ -47,9 +40,8 @@ callback!(
     Input("upload", "contents"),
     State("upload", "filename"),
     State("upload", "last_modified"),
-) do contents, filename, last_modified
+) do contents, filename, last_modified, pathname
     if !(contents isa Nothing)
-        children = [parse_contents(c...) for c in zip(contents, filename, last_modified)]
-        return children
+        return children = [parse_contents(c...) for c in zip(contents, filename, last_modified)]
     end
 end

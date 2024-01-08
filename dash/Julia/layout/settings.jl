@@ -3,11 +3,7 @@ using DashCoreComponents
 using DashDaq
 using DashHtmlComponents
 
-include("../components/sliders.jl")
-include("../components/fonts.jl")
-include("../components/text_styling.jl")
-include("../components/text_alignment.jl")
-include("../components/colorpickers.jl")
+include("../components/components.jl")
 
 settings = html_div(
     id = "settings-container",

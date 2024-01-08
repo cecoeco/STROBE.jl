@@ -2,7 +2,7 @@ using Dash
 using DashBootstrapComponents
 using DashHtmlComponents
 
-include("../components/searchbar.jl")
+include("../components/components.jl")
 
 navbar = dbc_nav(
     id="navbar",

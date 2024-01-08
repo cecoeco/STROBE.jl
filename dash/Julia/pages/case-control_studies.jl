@@ -3,8 +3,8 @@ using DashCoreComponents
 using DashHtmlComponents
 using DashTable
 
-include("../../../dash/Julia/layout/layout.jl")
-include("../../../dash/Julia/components/components.jl")
+include("../layout/layout.jl")
+include("../components/components.jl")
 
 case_control_studies = html_div(
     id = "case-control_studies",

@@ -14,6 +14,8 @@ text_styling = html_div(
         html_button(
             id="text-styling-button-bold",
             className="text-styling-button",
+            
+            value="bold",
             html_i(
                 id="text-styling-bold",
                 className="text-styling-icon fa-solid fa-bold"
@@ -22,6 +24,7 @@ text_styling = html_div(
         html_button(
             id="text-styling-button-italic",
             className="text-styling-button",
+            value="italic",
             html_i(
                 id="text-styling-italic",
                 className="text-styling-icon fa-solid fa-italic"
@@ -30,16 +33,18 @@ text_styling = html_div(
         html_button(
             id="text-styling-button-underline",
             className="text-styling-button",
+            value="underline",
             html_i(
                 id="text-styling-underline",
                 className="text-styling-icon fa-solid fa-underline"
             )
         ),
         html_button(
-            id="text-styling-button-strike",
+            id="text-styling-button-strikethrough",
             className="text-styling-button",
+            value="strikethrough",
             html_i(
-                id="text-styling-strike",
+                id = "text-styling-strikethrough",
                 className="text-styling-icon fa-solid fa-strikethrough"
             )
         )
