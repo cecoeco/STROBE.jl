@@ -1,7 +1,5 @@
 FROM julia:alpine
 
-ENV DASH_DEBUG_MODE False
-
 RUN julia -e 'using Pkg; \
     Pkg.add("Dash"); \
     Pkg.add("DashBootstrapComponents"); \
@@ -17,10 +15,8 @@ RUN julia -e 'using Pkg; \
     Pkg.add("Colors"); \
     Pkg.add("HTTP")'
 
-EXPOSE 8050
+COPY / *.css
+COPY / *.jl
+COPY / *.js
 
-WORKDIR /STROBE.jl/dash/Julia
-
-COPY app.jl .
-
-CMD julia app.jl
+CMD ["julia", "app.jl"]
