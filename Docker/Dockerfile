@@ -15,8 +15,10 @@ RUN julia -e 'using Pkg; \
     Pkg.add("Colors"); \
     Pkg.add("HTTP")'
 
-COPY / *.css
-COPY / *.jl
-COPY / *.js
+WORKDIR /dash
 
-CMD ["julia", "/dash/Julia/app.jl"]
+COPY /dash/assets/CSS *.css
+COPY /dash/assets/JS *.js
+COPY /dash/Julia *.js
+
+CMD ["julia", "/Julia/app.jl"]
