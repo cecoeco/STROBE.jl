@@ -18,7 +18,7 @@ RUN julia -e 'using Pkg; \
 WORKDIR /dash
 
 COPY /dash/assets/CSS *.css
-COPY /dash/assets/JS *.js
-COPY /dash/Julia *.js
+COPY /dash/assets/JavaScript *.js
+COPY /dash/Julia *.jl
 
 CMD ["julia", "/Julia/app.jl"]
