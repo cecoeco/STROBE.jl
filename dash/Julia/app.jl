@@ -12,7 +12,6 @@ using XLSX
 using Colors
 using HTTP
 
-
 assets_folder::String = "dash/assets"
 
 fontawesome_css::String = "https://use.fontawesome.com/releases/v6.5.1/css/all.css"
@@ -80,3 +79,6 @@ include("callbacks/callbacks.jl")
 run_server(app, HTTP.Sockets.localhost, 8050, debug = false)
 
 #= go to http://127.0.0.1:8050/home =#
+
+using Pkg
+Pkg.add(["Dash", "DashBootstrapComponents", "DashCoreComponents", "DashDaq", "DashHtmlComponents", "DashTable", "PlotlyJS", "DataFrames", "Base64", "CSV", "XLSX", "Colors", "HTTP"])

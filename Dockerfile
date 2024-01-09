@@ -1,5 +1,7 @@
 FROM julia:alpine
 
+ENV DASH_DEBUG_MODE False
+
 RUN julia -e 'using Pkg; \
     Pkg.add("Dash"); \
     Pkg.add("DashBootstrapComponents"); \
