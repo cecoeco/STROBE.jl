@@ -17,6 +17,6 @@ RUN julia -e 'using Pkg; \
 
 WORKDIR /
 
-COPY . .
+COPY / /
 
 CMD ["julia", "./dash/Julia/app.jl"]
