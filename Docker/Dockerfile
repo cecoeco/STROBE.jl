@@ -19,4 +19,4 @@ COPY / *.css
 COPY / *.jl
 COPY / *.js
 
-CMD ["julia", "app.jl"]
+CMD ["julia", "/dash/Julia/app.jl"]
