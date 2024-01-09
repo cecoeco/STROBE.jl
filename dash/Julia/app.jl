@@ -4,13 +4,14 @@ using DashCoreComponents
 using DashDaq
 using DashHtmlComponents
 using DashTable
-using HTTP
 using PlotlyJS
 using DataFrames
 using Base64
 using CSV
 using XLSX
 using Colors
+using HTTP
+
 
 assets_folder::String = "dash/assets"
 
@@ -45,7 +46,7 @@ app = dash(
 
 app.title = "STROBE.jl: Strengthening the Reporting of Observational Studies in Epidemiology"
 
-app.index_string = "
+app.index_string = """
 <!DOCTYPE html>
 <html lang=\"en\">
     <head>
@@ -53,6 +54,7 @@ app.index_string = "
         <title>{%title%}</title>
         {%favicon%}
         {%css%}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src=\"$google_tag_manager_js\"></script>
         <script async src=\"$programmable_search_engine_js\"></script>
     </head>
@@ -65,20 +67,16 @@ app.index_string = "
         </footer>
     </body>
 </html>
-"
+"""
 
 include("layout/layout.jl")
 include("components/components.jl")
 include("pages/pages.jl")
 
-page = html_div(id = "page-content")
-
-app.layout = html_div([dcc_location(id = "url"), navbar, fab, page, footer])
+app.layout = html_div(children = [dcc_location(id = "url"), navbar, fab, page, footer])
 
 include("callbacks/callbacks.jl")
 
-run_server(app, "0.0.0.0", debug = true)
+run_server(app, HTTP.Sockets.localhost, 8050, debug = false)
 
-#= go to http://127.0.0.1:8050 =#
-
-
+#= go to http://127.0.0.1:8050/home =#
